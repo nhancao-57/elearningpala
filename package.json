@@ -2,6 +2,10 @@
   "name": "pala-elearning",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./src/output.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+  },
   "description": "eLearning system of Pala Language Centre",
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.5",
