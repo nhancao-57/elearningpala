@@ -1,0 +1,91 @@
+/* Plain CSS keeps the starter usable before Tailwind is installed.
+   Inter will be used when its font assets are added to the project. */
+:root {
+  color-scheme: light;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --heading: #1e293b;
+  --text: #475569;
+  --border: #e2e8f0;
+  --accent: #c43161;
+  --tint: #fbeaf0;
+  --success-bg: #f4f7e6;
+  --success-text: #2d3902;
+  --green: #5d7308;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --heading: #f1f5f9;
+    --text: #cbd5e1;
+    --border: #334155;
+    --accent: #ea7fa5;
+    --tint: #5c1228;
+    --success-bg: #1f2606;
+    --success-text: #e9f0cd;
+    --green: #d6eb7c;
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px clamp(16px, 5vw, 64px);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 44px;
+  color: var(--accent);
+  font-size: 32px;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: -.025em;
+}
+.brand span { color: var(--heading); font-size: 16px; letter-spacing: normal; font-weight: 600; }
+.centre-name { font-size: 14px; }
+main { flex: 1; display: grid; place-items: center; padding: 64px 16px; }
+.welcome {
+  width: 100%;
+  max-width: 680px;
+  padding: clamp(24px, 6vw, 48px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+}
+.badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  background: var(--tint);
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+}
+h1 { margin: 24px 0 16px; color: var(--heading); font-size: clamp(30px, 5vw, 36px); line-height: 1.25; letter-spacing: -.025em; font-weight: 800; }
+.welcome > p { margin: 0; font-size: 18px; }
+.notice { display: flex; align-items: baseline; gap: 12px; margin-top: 32px; padding: 16px; border-radius: 12px; background: var(--success-bg); color: var(--success-text); }
+.notice p { margin: 0; font-size: 14px; }
+.status-dot { flex: 0 0 8px; height: 8px; border-radius: 50%; background: var(--green); }
+footer { padding: 24px 16px; text-align: center; font-size: 14px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 8px; }
