@@ -89,12 +89,47 @@ h1 { margin: 24px 0 16px; color: var(--heading); font-size: clamp(30px, 5vw, 36p
 :where(a, button):focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 8px; }
 .site-header { position: relative; }
 #header-placeholder { position: sticky; top: 0; z-index: 50; }
-.desktop-navigation, .app-navigation { display: none; }
+.desktop-navigation { display: none; }
 .mobile-utilities { display: flex; }
 button { cursor: pointer; min-height: 44px; min-width: 44px; }
-.lang-btn[aria-pressed="true"] { background: var(--tint); color: var(--accent); }
 @media (min-width: 1280px) {
   .desktop-navigation { display: flex; }
   .mobile-utilities { display: none; }
   #mobile-menu { display: none; }
+}
+
+.app-header { background: var(--surface); border-bottom: 1px solid var(--border); }
+.app-header-inner { max-width: 1200px; margin: auto; padding: 16px 24px; display: flex; align-items: center; gap: 32px; }
+.app-brand { display: inline-flex; align-items: center; gap: 12px; color: var(--heading); font-weight: 800; text-decoration: none; }
+.app-brand img { width: 44px; height: 44px; object-fit: contain; }
+.app-links { gap: 8px; }
+.app-links a { display: flex; align-items: center; min-height: 44px; padding: 8px 16px; border-radius: 12px; font-size: 14px; font-weight: 600; text-decoration: none; }
+.app-links a:hover { background: var(--bg); }
+.app-links a[aria-current] { background: var(--tint); color: var(--accent); }
+.app-header-actions { margin-left: auto; display: flex; align-items: center; gap: 16px; }
+.theme-button { display: inline-flex; align-items: center; justify-content: center; border-radius: 12px; }
+.theme-button:hover { background: var(--bg); }
+.user-summary { display: flex; align-items: center; gap: 12px; }
+.user-avatar { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--success-bg); color: var(--success-text); font-weight: 700; }
+.user-details { display: grid; font-size: 14px; line-height: 1.5; }
+.user-details strong { color: var(--heading); }
+.user-details small { font-size: 12px; }
+.app-mobile-menu { padding: 12px 24px; border-top: 1px solid var(--border); }
+.learning-main { flex: 1; width: 100%; max-width: 1200px; margin: auto; padding: 48px 24px 64px; }
+.exercise-section, .learning-panel { scroll-margin-top: 112px; }
+.learning-empty { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; padding: 48px 24px; margin-top: 32px; border: 1px solid var(--border); border-radius: 24px; background: var(--surface); }
+.empty-symbol { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 16px; background: var(--tint); color: var(--accent); font-size: 24px; font-weight: 700; }
+.learning-main h2 { color: var(--heading); font-size: 20px; font-weight: 700; }
+.coming-soon { padding: 4px 12px; border: 1px solid var(--border); border-radius: 9999px; font-size: 12px; }
+.learning-panel { margin-top: 32px; padding: 24px; border: 1px solid var(--border); border-radius: 16px; background: var(--surface); }
+.learning-panel p { margin-top: 8px; }
+.muted-copy { font-size: 14px; }
+@media (min-width: 1280px) { .app-header-actions .mobile-utilities { display: none; } }
+@media (max-width: 479px) {
+  .app-header-inner { padding: 12px 16px; gap: 12px; }
+  .app-header-actions { gap: 8px; }
+  .user-details { display: none; }
+  .app-brand { gap: 8px; font-size: 14px; }
+  .app-brand img { width: 36px; height: 36px; }
+  .learning-main { padding: 32px 16px; }
 }

@@ -9,15 +9,18 @@ Run npm install first on a fresh checkout.
 
 - index.html: page content and fallback header/footer.
 - main.js: loads _header-nav.html and _footer-content.html, then initialises
-  mobile navigation, theme controls, and English/Vietnamese controls.
+  mobile learning navigation and theme controls.
 - src/input.css: Tailwind entry, brand colours, and class-based dark mode.
 - styles.css: component styles imported into the Tailwind build.
 - src/output.css: generated CSS; do not edit directly.
 
 Theme follows the system until changed; the preference is saved locally.
-Language defaults to English. Translation uses data-en and data-vi attributes.
+The interface uses Vietnamese, without a language switcher or translation runtime.
 Inter falls back to the system font until local font files are provided.
 
-The shared partials retain navigation to main-website pages which do not yet
-exist in this starter. The copied 404.html still depends on main-site assets
+The header links to Exercises and My learning sections. The learner identity is
+a demo placeholder until authentication is implemented. Exercises and activity
+are empty states; no sample results or login state are stored.
+The footer retains main-website links which do not yet exist in this starter.
+The copied 404.html still depends on main-site assets
 and scripts and has not been migrated.
